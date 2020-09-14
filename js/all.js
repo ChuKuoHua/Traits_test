@@ -21,6 +21,7 @@ const app = new Vue({
     resultList: [],
     resultIndex: 0,
     isCheck: false,
+    isDisabled: true,
   },
   created() {
     this.getData();
@@ -47,6 +48,9 @@ const app = new Vue({
               this.questions.push(item);
             });
           }
+          this.questions.forEach((item) => {
+            item.options.reverse();
+          });
           // 隨機排序
           this.questions = this.random(this.questions);
         }).catch((err) => {
@@ -55,6 +59,7 @@ const app = new Vue({
     },
     // 下一題
     nextPage(id) {
+      this.isDisabled = true;
       const check = document.querySelector(`[name="${id}"]:checked`);
       if (check) {
         this.isCheck = true;
@@ -69,6 +74,7 @@ const app = new Vue({
     },
     // 最後結果
     showResult(id) {
+      this.isDisabled = true;
       const check = document.querySelector(`[name="${id}"]:checked`);
       if (check) {
         this.isCheck = true;
@@ -123,6 +129,9 @@ const app = new Vue({
         [data[i], data[j]] = [data[j], data[i]];
       }
       return data;
+    },
+    isDisabledFn() {
+      this.isDisabled = false;
     },
   },
 });

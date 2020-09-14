@@ -1,4 +1,18 @@
+$white: #fff;
+$black: #000;
+$gray: #f5fffa6b;
+// btn color
 $cyan: #3cafb5;
+$cyanHover: #19848a;
+$result-col: #fc8365;
+$resultHover: #de5836;
+
+@mixin d-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .bg{
   background-image: url('https://images.unsplash.com/photo-1592059417325-2eaf76b241c2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80');
   background-size: cover;
@@ -11,9 +25,7 @@ $cyan: #3cafb5;
 .start-box,
 .questions-box,
 .result-box{
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include d-center;
   height: 100%;
 }
 .start-box{
@@ -21,7 +33,7 @@ $cyan: #3cafb5;
   max-width: 100%;
   .card{
     border: 0;
-    background: #f5fffa6b;
+    background: $gray;
     box-shadow: 0 0 5px 3px #69636329;
     h1{
       font-size: 32px;
@@ -43,9 +55,7 @@ $cyan: #3cafb5;
 // questions
 .que-content{
   position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  @include d-center;
   h3{
     text-align: center!important;
     transform: translateY(-35px);
@@ -53,7 +63,7 @@ $cyan: #3cafb5;
     letter-spacing: 2px;
   }
   .card{
-    background: #f5fffa6b;
+    background: $gray;
     border-top: 3px solid $cyan;
     border-bottom: 0;
     border-left: 0;
@@ -68,18 +78,23 @@ $cyan: #3cafb5;
   .btn-cyan{
     background-color: $cyan;
     border-color: $cyan;
-    color: black;
+    color: $black;
     &:hover{
-      background-color: #19848a;
-      border-color: #19848a;
+      background-color: $cyanHover;
+      border-color: $cyanHover;
+    }
+  }
+  .btn:disabled{
+    color: #3c3838;
+    &:hover{
+      background-color: $cyan;
+      border-color: $cyan;
     }
   }
 }
 .queNum{
+  @include d-center;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 80px;
   height: 80px;
   background: $cyan;
@@ -89,12 +104,18 @@ $cyan: #3cafb5;
   font-size: 20px;
 }
 .btn-result{
-  background-color: #fc8365;
-  border-color: #fc8365;
-  color: black;
+  background-color: $result-col;
+  border-color: $result-col;
+  color: $black;
   &:hover{
-    background-color: #de5836;
-    border-color: #de5836;
+    background-color: $resultHover;
+    border-color: $resultHover;
+  }
+}
+.result-dis{
+  &:hover{
+    background-color: $result-col !important;
+    border-color: $result-col !important;
   }
 }
 // radio
@@ -108,7 +129,7 @@ $cyan: #3cafb5;
     display: none;
   }
 }
-.indicator {
+.indicator{
   position: absolute;
   top: 5px;
   left: 0px;
@@ -140,7 +161,7 @@ $cyan: #3cafb5;
 //result
 .result-bg{
   width: 80%;
-  background: #f5fffa6b;
+  background: $gray;
   overflow: hidden;
   border-radius: 10px 0 0 10px;
 }
@@ -161,10 +182,6 @@ $cyan: #3cafb5;
 }
 .rwd-btn-box{
   display: none;
-}
-.btn-box{
-  display: flex;
-  justify-content: center;
 }
 .btn-box,.rwd-btn-box{
   .btn{
@@ -204,7 +221,7 @@ $cyan: #3cafb5;
     &.active{
       box-shadow: 0 0 100px inset;
       span{
-        color: #fff;
+        color: $white;
       }
     }
   }
@@ -214,7 +231,7 @@ $cyan: #3cafb5;
   &:hover{
     box-shadow: 0 0 100px inset;
     span{
-      color: #fff;
+      color: $white;
     }
   }
 }
@@ -223,7 +240,7 @@ $cyan: #3cafb5;
   &:hover{
     box-shadow: 0 0 100px inset;
     span{
-      color: #fff;
+      color: $white;
     }
   }
 }
@@ -232,7 +249,7 @@ $cyan: #3cafb5;
   &:hover{
     box-shadow: 0 0 100px inset;
     span{
-      color: #fff;
+      color: $white;
     }
   }
 }
@@ -241,7 +258,7 @@ $cyan: #3cafb5;
   &:hover{
     box-shadow: 0 0 100px inset;
     span{
-      color: #fff;
+      color: $white;
     }
   }
 }
@@ -250,7 +267,7 @@ $cyan: #3cafb5;
   &:hover{
     box-shadow: 0 0 100px inset;
     span{
-      color: #fff;
+      color: $white;
     }
   }
 }

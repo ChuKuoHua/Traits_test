@@ -15,7 +15,6 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.1/css/all.min.css"
     rel="stylesheet"
   />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.css">
   <link rel="stylesheet" href="css/all.css">
 </head>
 <body>
@@ -75,6 +74,7 @@
                       v-model="questionList[Math.floor(index/2)].point[index%2]"
                       :name="question.id"
                       :value="option.fraction"
+                      @click="isDisabledFn()"
                     />
                     <div class="indicator"></div>
                     <span>{{ option.description }}</span>
@@ -85,6 +85,7 @@
                   class="btn btn-cyan float-right mt-5"
                   v-if="index < 9"
                   @click="nextPage(question.id)"
+                  :disabled="isDisabled"
                 >
                   下一題
                 </button>
@@ -93,6 +94,8 @@
                   class="btn btn-result float-right mt-5"
                   v-else
                   @click="showResult(question.id)"
+                  :disabled="isDisabled"
+                  :class="{'result-dis': isDisabled === true}"
                 >
                   結果
                 </button>
@@ -123,10 +126,10 @@
               <span>{{ result.category }}</span>
             </a>
           </nav>
-          <div class="btn-box">
+          <div class="d-flex justify-content-center">
             <button
               type="button"
-              class="btn btn-dark mt-5"
+              class="btn btn-dark mt-5 desktop-btn"
               @click="resetData"
             >
               重新測驗
@@ -167,7 +170,7 @@
               </div>
             </div>
           </div>
-          <div class="rwd-btn-box">
+          <div class="rwd-btn-box justify-content-center">
             <button
               type="button"
               class="btn btn-dark mt-5"
@@ -197,7 +200,6 @@
     crossorigin="anonymous"
   ></script>
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
   <script src="js/all.js"></script>
 </body>

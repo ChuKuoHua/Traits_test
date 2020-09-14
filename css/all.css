@@ -5,15 +5,12 @@
     display: flex; }
   .start-box {
     width: 100% !important; }
-  .btn-box {
+  .desktop-btn {
     display: none !important; }
   .rwd-btn-box {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
-    display: flex !important;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    justify-content: center; }
+    display: flex !important; }
   .result-box {
     height: auto !important; }
   .result-bg {
@@ -92,12 +89,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   height: 100%; }
 
 .start-box {
@@ -126,12 +123,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
-  justify-content: center; }
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center; }
   .que-content h3 {
     text-align: center !important;
     -webkit-transform: translateY(-35px);
@@ -153,13 +150,17 @@
   .que-content .btn-cyan {
     background-color: #3cafb5;
     border-color: #3cafb5;
-    color: black; }
+    color: #000; }
     .que-content .btn-cyan:hover {
       background-color: #19848a;
       border-color: #19848a; }
+  .que-content .btn:disabled {
+    color: #3c3838; }
+    .que-content .btn:disabled:hover {
+      background-color: #3cafb5;
+      border-color: #3cafb5; }
 
 .queNum {
-  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -169,6 +170,7 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin: 0 auto;
   width: 80px;
   height: 80px;
   background: #3cafb5;
@@ -182,10 +184,14 @@
 .btn-result {
   background-color: #fc8365;
   border-color: #fc8365;
-  color: black; }
+  color: #000; }
   .btn-result:hover {
     background-color: #de5836;
     border-color: #de5836; }
+
+.result-dis:hover {
+  background-color: #fc8365 !important;
+  border-color: #fc8365 !important; }
 
 .form-check-label span {
   margin-left: 10px; }
@@ -249,14 +255,6 @@
 
 .rwd-btn-box {
   display: none; }
-
-.btn-box {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center; }
 
 .btn-box .btn, .rwd-btn-box .btn {
   padding: 10px 20px;
